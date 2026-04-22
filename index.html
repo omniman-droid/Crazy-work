@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Shift Protocol</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="setupScreen" class="overlay">
+    <div class="panel setup">
+      <h1>Red Shift Protocol</h1>
+      <p>Create your Soviet worker file before first deployment.</p>
+      <div class="grid2">
+        <label>Russian Name <input id="setupName" maxlength="24" placeholder="e.g. Aleksei Voronov" /></label>
+        <label>Color Preference Ranking (comma list of 20 colors)
+          <textarea id="setupColors" rows="3"></textarea>
+        </label>
+      </div>
+      <label>Backstory
+        <textarea id="setupBackstory" rows="3" placeholder="Write your worker backstory..."></textarea>
+      </label>
+      <div class="grid2">
+        <label>Strength
+          <select id="setupStrength"></select>
+        </label>
+        <label>Weakness
+          <select id="setupWeakness"></select>
+        </label>
+      </div>
+      <button id="startBtn">Start Assignment</button>
+      <p class="small">Your file is public in the in-game records terminal.</p>
+    </div>
+  </div>
+
+  <header id="hud">
+    <h2>Red Shift Protocol</h2>
+    <div class="row">
+      <span>Round: <b id="hudRound"></b></span>
+      <span>Role: <b id="hudRole"></b></span>
+      <span>Room: <b id="hudRoom"></b></span>
+      <span>Power: <b id="hudPower"></b></span>
+      <span>Bloodlust: <b id="hudBloodlust"></b></span>
+      <span>Infected: <b id="hudInfected"></b></span>
+      <span>Time: <b id="hudTime"></b></span>
+    </div>
+    <div class="row">
+      <span>Rubles: <b id="hudMoney"></b></span>
+      <span>Hunger: <b id="hudHunger"></b></span>
+      <span>Radiation: <b id="hudRadiation"></b></span>
+      <span>Bleeding: <b id="hudBleeding"></b></span>
+      <span>Hands: <b id="hudHands"></b></span>
+      <button id="newRoundBtn" class="hidden">Begin Next Round</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h3>Compact Plant Map</h3>
+      <div id="mapGrid"></div>
+      <div id="mutantInfo"></div>
+    </section>
+
+    <section class="panel">
+      <h3 id="roomTitle">Room</h3>
+      <p id="roomDesc"></p>
+      <div id="actionButtons"></div>
+      <h4>Occupants (local bubbles)</h4>
+      <div id="occupants"></div>
+      <h4>Text Chat</h4>
+      <div id="chatLog"></div>
+      <form id="chatForm">
+        <input id="chatInput" maxlength="120" placeholder="Type local chat..." />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h3>Requisition Shop</h3>
+      <div id="shop"></div>
+      <h3>Personnel Files</h3>
+      <div id="crewFiles"></div>
+      <h3>Round Event Log</h3>
+      <div id="eventLog"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
